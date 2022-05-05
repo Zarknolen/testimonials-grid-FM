@@ -1,0 +1,214 @@
+/*
+-------------------- This is a first mobile design ---------------
+
+--Table of contents--
+
+	1. Root, universal selector and body
+
+	2. Content
+
+		2.1 Testmonials grid
+	
+	3. Foooter
+
+	4. Media queries
+
+		4.1 Tablets
+
+		4.2 Laptops
+
+		4.3 Desktop
+
+
+*/
+
+
+/*--1. Root and universal selector--*/
+:root{
+
+--moderate-violet: hsl(263, 55%, 52%);
+--very-dark-grayish-blue: hsl(217, 19%, 35%);
+--very-dark-blackish-blue: hsl(219, 29%, 14%);
+
+--light-gray: hsl(0, 0%, 81%);
+--light-grayish-blue: hsl(210, 46%, 95%);
+
+--font: 'Barlow Semi Condensed', sans-serif;
+}
+
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	line-height: 1.5;
+
+	font-family: var(--font);
+}
+
+body{
+	background-color: var(--light-grayish-blue);
+}
+/*Root and universal selector END*/
+
+
+/*--2.Content--*/
+/*-----2.1 Testimonials grid-----*/
+.testimonials{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 2em;
+
+	padding: 4rem 1.5rem;
+}
+
+.testimonial--daniel{
+	background-color: var(--moderate-violet);
+	background-image: url("../img/bg-pattern-quotation.svg");
+	background-repeat: no-repeat;
+	background-position: 75% 0%;
+	padding: 2rem;
+
+	border-radius: 30px;
+}
+
+.testimonial--jonathan{
+	background-color: var(--very-dark-grayish-blue);
+	padding: 2rem;
+
+	border-radius: 30px;
+}
+
+.testimonial--jeanette{
+	background-color: #fff;
+	padding: 2rem;
+
+	border-radius: 30px;
+}
+
+.testimonial--patrick{
+	background-color: var(--very-dark-blackish-blue);
+	padding: 2rem;
+
+	border-radius: 30px;
+}
+
+.testimonial--kira{
+	background-color: #fff;
+	padding: 2rem;
+
+	border-radius: 30px;
+}
+
+.testimonial__user{
+	display: flex;
+}
+
+.testimonial__img{
+	border-radius: 50%;
+}
+
+.testimonial__nameGraduateContainer{
+	margin-left: 1em;
+}
+
+
+.testimonial__name--white{
+	color: #fff;
+}
+
+.testimonial__name--grayishBlue{
+	color: var(--very-dark-grayish-blue)
+}
+
+.testimonial__graduate{
+	color: var(--light-gray);
+}
+
+.testimonial__title--white{
+	color: #fff;
+}
+
+.testimonial__title--grayishBlue{
+	color: var(--very-dark-grayish-blue);
+}
+
+.testimonial__paragraph{
+	color: var(--light-gray);
+}
+
+.testimonial__paragraph--grayishBlue{
+	color: var(--very-dark-grayish-blue);
+}
+/*-----Testimonials grid END-----*/
+/*--Content END--*/
+
+
+/*--3.Footer--*/
+footer{
+	background-color: var(--moderate-violet);
+}
+
+.footer__p{
+	text-align: center;
+
+	color: #fff;
+}
+.footer__p a{
+	color: #fff;
+}
+
+
+/*--4.Media queries--*/
+/*-----4.1 Tablets-----*/
+@media screen and (min-width: 37.5em){
+	.testimonials{
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: 
+		"daniel daniel"
+		"jonathan jeanette"
+		"patrick patrick"
+		"kira kira";
+	}
+
+	.testimonial--daniel{
+		grid-area: daniel;
+	}
+
+	.testimonial--jonathan{
+		grid-area: jonathan;
+	}
+
+	.testimonial--jeanette{
+		grid-area: jeanette;
+	}
+
+	.testimonial--patrick{
+		grid-area: patrick;
+	}
+
+	.testimonial--kira{
+		grid-area: kira;
+	}
+}
+
+/*-----4.2 Laptops-----*/
+@media screen and (min-width: 51.25em){
+	.testimonials{
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas: 
+		"daniel daniel kira"
+		"jonathan jonathan kira"
+		"jeanette jeanette kira"
+		"patrick patrick patrick"
+	}
+}
+
+/*-----4.3 Desktop-----*/
+@media screen and (min-width: 71.25em){
+	.testimonials{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-areas: 
+		"daniel daniel jonathan kira"
+		"jeanette patrick patrick kira"
+	}
+}
